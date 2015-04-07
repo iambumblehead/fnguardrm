@@ -95,105 +95,105 @@ $ node path/to/fnguard.js -i path/to/myfile.js -o path/to/writemyfile.js -t astr
 It is also usable from another script. See unit tests for more examples.
 
 * **uncomment**
-```javascript
-console.log(require('fnguardrm').uncomment('' +
-  'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
-  '  // fnguard\n' +
-  '  //   .isobj(sess, cfg)\n' +
-  '  //   .isstr(tplstr)\n' +
-  '  //   .isobj(data)\n' +
-  '  //   .isdomelem(elem);\n' +
-  '  fn = optfn(fn);\n' +
-  '\n' +
-  '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
-  '    if (err) return fn(err);\n' +
-  '\n' +
-  '    elem.innerHTML = htmlstr;\n' +
-  '    fn(null, elem);\n' +
-  '  });\n' +
-  '}\n'));
-// function f (sess, cfg, tplstr, data, elem, fn) {
-//   fnguard
-//     .isobj(sess, cfg)
-//     .isstr(tplstr)
-//     .isobj(data)
-//     .isdomelem(elem);
-//   fn = optfn(fn);
-// 
-//   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
-//     if (err) return fn(err);
-// 
-//     elem.innerHTML = htmlstr;
-//     fn(null, elem);
-//   });
-// }
-```
+  ```javascript
+  console.log(require('fnguardrm').uncomment('' +
+    'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
+    '  // fnguard\n' +
+    '  //   .isobj(sess, cfg)\n' +
+    '  //   .isstr(tplstr)\n' +
+    '  //   .isobj(data)\n' +
+    '  //   .isdomelem(elem);\n' +
+    '  fn = optfn(fn);\n' +
+    '\n' +
+    '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
+    '    if (err) return fn(err);\n' +
+    '\n' +
+    '    elem.innerHTML = htmlstr;\n' +
+    '    fn(null, elem);\n' +
+    '  });\n' +
+    '}\n'));
+  // function f (sess, cfg, tplstr, data, elem, fn) {
+  //   fnguard
+  //     .isobj(sess, cfg)
+  //     .isstr(tplstr)
+  //     .isobj(data)
+  //     .isdomelem(elem);
+  //   fn = optfn(fn);
+  // 
+  //   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
+  //     if (err) return fn(err);
+  // 
+  //     elem.innerHTML = htmlstr;
+  //     fn(null, elem);
+  //   });
+  // }
+  ```
 
 * **comment**
-```javascript
-console.log(require('fnguardrm').comment('' +
-  'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
-  '  fnguard\n' +
-  '    .isobj(sess, cfg)\n' +
-  '    .isstr(tplstr)\n' +
-  '    .isobj(data)\n' +
-  '    .isdomelem(elem);\n' +
-  '  fn = optfn(fn);\n' +
-  '\n' +
-  '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
-  '    if (err) return fn(err);\n' +
-  '\n' +
-  '    elem.innerHTML = htmlstr;\n' +
-  '    fn(null, elem);\n' +
-  '  });\n' +
-  '}\n'));
-// function f (sess, cfg, tplstr, data, elem, fn) {
-//   // fnguard
-//   //   .isobj(sess, cfg)
-//   //   .isstr(tplstr)
-//   //   .isobj(data)
-//   //   .isdomelem(elem);
-//   fn = optfn(fn);
-// 
-//   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
-//     if (err) return fn(err);
-// 
-//     elem.innerHTML = htmlstr;
-//     fn(null, elem);
-//   });
-// }
-```
+  ```javascript
+  console.log(require('fnguardrm').comment('' +
+    'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
+    '  fnguard\n' +
+    '    .isobj(sess, cfg)\n' +
+    '    .isstr(tplstr)\n' +
+    '    .isobj(data)\n' +
+    '    .isdomelem(elem);\n' +
+    '  fn = optfn(fn);\n' +
+    '\n' +
+    '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
+    '    if (err) return fn(err);\n' +
+    '\n' +
+    '    elem.innerHTML = htmlstr;\n' +
+    '    fn(null, elem);\n' +
+    '  });\n' +
+    '}\n'));
+  // function f (sess, cfg, tplstr, data, elem, fn) {
+  //   // fnguard
+  //   //   .isobj(sess, cfg)
+  //   //   .isstr(tplstr)
+  //   //   .isobj(data)
+  //   //   .isdomelem(elem);
+  //   fn = optfn(fn);
+  // 
+  //   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
+  //     if (err) return fn(err);
+  // 
+  //     elem.innerHTML = htmlstr;
+  //     fn(null, elem);
+  //   });
+  // }
+  ```
 
 * **astremove**
-```javascript
-console.log(require('fnguardrm').astremove('' +
-  'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
-  '  fnguard\n' +
-  '    .isobj(sess, cfg)\n' +
-  '    .isstr(tplstr)\n' +
-  '    .isobj(data)\n' +
-  '    .isdomelem(elem);\n' +
-  '  fn = optfn(fn);\n' +
-  '\n' +
-  '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
-  '    if (err) return fn(err);\n' +
-  '\n' +
-  '    elem.innerHTML = htmlstr;\n' +
-  '    fn(null, elem);\n' +
-  '  });\n' +
-  '}\n'));
-// function f (sess, cfg, tplstr, data, elem, fn) {
-//   "0";
-//   fn = optfn(fn);
-// 
-//   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
-//     if (err) return fn(err);
-// 
-//     elem.innerHTML = htmlstr;
-//     fn(null, elem);
-//   });
-// }
-```
+  ```javascript
+  console.log(require('fnguardrm').astremove('' +
+    'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
+    '  fnguard\n' +
+    '    .isobj(sess, cfg)\n' +
+    '    .isstr(tplstr)\n' +
+    '    .isobj(data)\n' +
+    '    .isdomelem(elem);\n' +
+    '  fn = optfn(fn);\n' +
+    '\n' +
+    '  this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {\n' +
+    '    if (err) return fn(err);\n' +
+    '\n' +
+    '    elem.innerHTML = htmlstr;\n' +
+    '    fn(null, elem);\n' +
+    '  });\n' +
+    '}\n'));
+  // function f (sess, cfg, tplstr, data, elem, fn) {
+  //   "0";
+  //   fn = optfn(fn);
+  // 
+  //   this.depthfirstrender(sess, cfg, tplstr, data, function (err, htmlstr) {
+  //     if (err) return fn(err);
+  // 
+  //     elem.innerHTML = htmlstr;
+  //     fn(null, elem);
+  //   });
+  // }
+  ```
 
 A [utility file][3] is included for emacs as well.
 
