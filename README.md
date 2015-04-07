@@ -85,7 +85,7 @@ The shell command takes the following modifiers:
 
   - **-i _inputpath_**,
   - **-o _outputpath_**,
-  - **-t [_astremove|comment|uncomment_]**
+  - **-t [_astremove**|**comment**|**uncomment_]**
 
 *ex.,*
 ```bash
