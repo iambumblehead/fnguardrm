@@ -94,6 +94,7 @@ $ node path/to/fnguard.js -i path/to/myfile.js -o path/to/writemyfile.js -t astr
 
 It is also usable from another script. See unit tests for more examples.
 
+* **uncomment**
 ```javascript
 console.log(require('fnguardrm').uncomment('' +
   'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
@@ -128,6 +129,7 @@ console.log(require('fnguardrm').uncomment('' +
 // }
 ```
 
+* **comment**
 ```javascript
 console.log(require('fnguardrm').comment('' +
   'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
@@ -162,6 +164,7 @@ console.log(require('fnguardrm').comment('' +
 // }
 ```
 
+* **astremove**
 ```javascript
 console.log(require('fnguardrm').astremove('' +
   'function f (sess, cfg, tplstr, data, elem, fn) {\n' +
