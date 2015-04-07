@@ -54,7 +54,7 @@ toelem: function(sess, cfg, tplstr, data, elem, fn) {
 
 **note: techniques used to comment-out and un-comment-out fnguard are not robust**. _Do not_ use them with minified sources. They may be suitable for your development purposes (the purpose for which they exist).
 
-For something robust use provided method `astremove` which uses [UglifyJS2's][2] ast tree to precisely remove fnguard calls.
+**For something robust use provided method `astremove`** which uses [UglifyJS2's][2] ast tree to precisely remove fnguard calls.
 
 
 [0]: http://www.bumblehead.com                            "bumblehead"
